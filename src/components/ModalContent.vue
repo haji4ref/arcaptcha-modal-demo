@@ -5,10 +5,20 @@
 </template>
 
 <script>
+let script;
 export default {
-  mounted() {
-    this.renderCaptcha();
+  created() {
+    script = document.createElement("script");
+    script.src = "https://widget.arcaptcha.ir/1/api.js?domain=localhost";
+    document.body.appendChild(script);
   },
+
+  mounted() {
+    script.onload = () => {
+      this.renderCaptcha();
+    };
+  },
+
   methods: {
     renderCaptcha() {
       window.arcaptcha.render(document.getElementById("arcaptcha"), {

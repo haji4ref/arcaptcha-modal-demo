@@ -15,10 +15,6 @@ export default {
       openModal(ModalContent);
     },
   },
-  created() {
-    const script = document.createElement("script");
-    script.src = "https://widget.arcaptcha.ir/1/api.js?domain=localhost";
-    document.body.appendChild(script);
-  },
+  created() {},
 };
 </script>
